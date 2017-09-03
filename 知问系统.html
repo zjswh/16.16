@@ -1,0 +1,135 @@
+<!--[if It IE9]><script>window.location.href="06-12/index.html"</script><![endif]-->
+<!--[if !IE]-->
+<!--[if gte IE 8]-->
+<html>
+<head>
+  <meta charset="utf-8">
+	<title>知问系统</title> 
+  <link rel='canonical' href='http://xywh224.faisco.cn'> 
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+  <link rel="shortcut icon" type="image/x-icon" href="image/play.png">
+
+</head>
+<body>
+<div id="header">
+    <div class="header_main">
+      <h1>知问</h1>
+      <div class="header_search">
+        <input type="text"   class="search" />
+
+      </div>
+      <div class="header_button">
+        
+        <button id="search_button">查询</button>
+        <button id="question_button">提问</button>
+      </div>
+      <div class="header_member">
+        <a href="javascript:void(0)" id="reg_a">注册</a> 
+        <a href="javascript:void(0)" id="member">用户</a> 
+        |  
+        <a href="javascript:void(0)" id="login_a">登录</a>
+        <a href="javascript:void(0)" id="logout">退出</a>
+      </div>
+    
+    </div>
+    
+</div>
+<div id="main">
+  <div class="main_left">
+    <div id="tabs">
+      <ul>
+        <li><a href="tab1.html">tab1</a></li>
+        <li><a href="tab2.html">tab2</a></li>
+        <li><a href="tab3.html">tab3</a></li>
+      </ul>
+    <!-- <div id="tab1"><p>tab1-content</p><p>tab1-content</p></div>
+    <div id="tab2">tab2-content</div>
+    <div id="tab3">tab3-content</div> -->
+    </div>
+    <div class="content">
+      
+    </div>
+  </div>
+  <div class="main_right">
+    <div id="accordion">
+        <h1>菜单1</h1>
+        <div>内容1</div>
+        <h1>菜单2</h1>
+        <div>内容2</div>
+        <h1>菜单3</h1>
+        <div>内容3</div>
+    </div>
+  </div>
+</div>
+
+
+
+<form id="reg" action="123.html" title="会员注册">
+<ol class="error"></ol>
+   <p>
+   <label for="user" title="账号">账号：</label>
+   <input type="text" name="user" class="text"  id="user"  />
+   <span class="star">*</span>
+   </p> 
+   <p>
+   <label for="pass">密码：</label>
+   <input type="password" name="pass" class="text"  id="pass" />
+   <span class="star">*</span>
+   </p> 
+   <p>
+   <label for="email">邮箱：</label>
+   <input type="text" name="email" class="text"  id="email" />
+   <span class="star">*</span>
+   </p> 
+   <p>
+   	<label>性别：</label>
+   	<input type="radio" name="sex" value="male" id="male" checked="checked"><label for="male">男</label></input><input type="radio" name="sex" value="female" id="female"><label for="female">女</label></input>
+   </p>
+   <p>
+   <label for="date">生日：</label>
+   <input type="text" name="birthday" class="text"  id="date" readonly="readonly" />
+   </p> 
+</form>
+<form id="question" title="提问">
+   <p>
+     <label for="title">问题名称：</label>
+     <input type="text" name="title" class="text"  id="title" style="width:390px;"  />
+   </p> 
+   <textarea name="content"></textarea>
+
+</form>
+
+<div id="loading">数据交互中。。</div>
+<div id="error">请登录后提问。。</div>
+<!-- <input type="text" id="abc"> -->
+
+<form id="login" title="会员登录">
+ <ol class="login_error"></ol>
+   <p>
+   <label for="login_user" title="账号">账号：</label>
+   <input type="text" name="login_user" class="text"  id="login_user"  />
+   <span class="star">*</span>
+   </p> 
+   <p>
+   <label for="login_pass">密码：</label>
+   <input type="password" name="login_pass" class="text"  id="login_pass" />
+   <span class="star">*</span>
+   </p>  
+   <p>
+     <input type="checkbox" name="expires" id="expires" checked="checked" />
+     <label for="expires">登录后有效期一周</label>
+   </p>
+</form>
+<div id="foot">
+  盛威豪 | www.xywh224.cn.com
+</div>
+
+<script type="text/javascript"src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.validate.js"></script>
+<script type="text/javascript" src="js/jquery.form.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript"src="js/jquery-ui.js"></script>
+<script type="text/javascript"src="js/index.js"></script>
+</body>
+</html>

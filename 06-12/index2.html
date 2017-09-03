@@ -1,0 +1,127 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<style type="text/css">
+	*{margin:0px;padding:0px;list-style: none;}
+    #Music{width: 730px;height: 470px;margin:auto;margin-top: 50px;
+       box-shadow: 0px 0px 10px #000; }
+    #Music .left{width: 360px;float: left;height: 470px;}
+    #Music .right{width:370px;float: right;height: 470px;}   
+  	#Music .left .title{width:360px;height:60px;background:url(images/bg1.jpg);
+  		text-align:center;line-height:60px;font-family: "微软雅黑"；}
+	#Music .left .xxpic{display: block;}
+	#Music .left .bottom{width:360px;height:95px;background:url(images/bg2.jpg);padding-top: 25px;}
+	#Music .left .bottom .but{width:150px;height: 26px;margin: auto;}
+	#Music .left .bottom .but span{height: 26px;width: 27px;float: left; cursor:pointer;}
+	#Music .left .bottom .but .prev{background:url(images/sm_icon.png) -49px 0px;}
+	#Music .left .bottom .but .play{width:22px;margin:0px 30px;background:url(images/sm_icon.png) -101px 0px;}
+	#Music .left .bottom .but .next{background:url(images/sm_icon.png) -124px 0px;}
+	#Music .left .bottom .gdt{height:15px;width: 200px;
+	  margin:10px 70px 0px;border-radius:5px;box-shadow: 0px 0px 5px #000;}
+	#Music .left .bottom .gdt .jd{height:15px;width: 0px;background: red;border-radius:5px;}  
+	#Music .right .title{height: 60px;width:370px;background: red;color: #fff;font-size:20px;text-align:center;line-height:60px;font-family: "微软雅黑"；}
+	#Music .right ul li{width:370px;height:41px;background: url(images/bg4.png);font-size:14px;color:#fff;line-height: 41px;font-family: "微软雅黑"；}
+	#Music .right ul li a{color: #7e868e;text-decoration: none;display:block;text-indent:30px;background: url(images/play.png) no-repeat 10px 13px;height:40px;}
+	#Music .right ul li a:hover{color:#fff;}
+	#Music .right ul li.active a{color: #fff;border-bottom: 1px solid #f16d6e;background: url(images/pause.png) no-repeat 10px 13px;}
+	</style>
+</head>
+<body>
+<div id="Music">
+	<div class="left">
+		<div class="title"></div>
+		<div class="body"></div><img src="images/music.gif" width="360px" height="290px" class="xxpic">
+		<div class="bottom">
+			<div class="but">
+				<span class="prev"></span>
+		        <span class="play"></span>
+		        <span class="next"></span>
+			</div>
+			<div class="gdt">
+				<div class="jd"></div>
+			</div> 
+		</div>
+	</div>
+	<div class="right">
+		<div class="title">音乐播放器</div>
+		<ul>
+			<li ><a href="javascript:void(0)" dataSrc="mp3/周杰伦 - 彩虹.mp3" mz="周杰伦 - 彩虹" sj="263000">周杰伦 - 彩虹</a></li>
+			<li><a href="javascript:void(0)" dataSrc="mp3/周杰伦 - 枫.mp3" mz="周杰伦 - 枫" sj="10000">周杰伦 - 枫</a></li>
+			<li><a href="javascript:void(0)" dataSrc="mp3/3.mp3" mz="母亲">母亲</a></li>
+            <li><a href="javascript:void(0)" dataSrc="mp3/4.mp3" mz="相亲相爱的一家人">相亲相爱的一家人</a></li>
+			<li><a href="javascript:void(0)" dataSrc="mp3/5.mp3" mz="壮志在我心" >壮志在我心</a></li>
+			<li><a href="javascript:void(0)" dataSrc="mp3/伯爵 - 谁的错.mp3" mz="谁的错">谁的错</a></li>
+			<li><a href="javascript:void(0)" dataSrc="mp3/周杰伦 - 不能说的秘密.mp3" mz="周杰伦 - 不能说的秘密">周杰伦 - 不能说的秘密</a></li>
+			<li><a href="javascript:void(0)" dataSrc="mp3/3.mp3" mz="当你老了">当你老了</a></li>
+			<li><a href="javascript:void(0)" dataSrc="mp3/4.mp3" mz="母亲">母亲</a></li>
+            <li><a href="javascript:void(0)" dataSrc="mp3/5.mp3" mz="相亲相爱的一家人">相亲相爱的一家人</a></li>
+			
+		</ul>
+	</div>
+</div>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+var MusicSrc="mp3/周杰伦 - 彩虹.mp3";
+var Audio=CreatMusic(MusicSrc);
+var clickNum=0;
+var _index=0;
+  $(".but .play").click(function(){
+	if(clickNum==0){
+	 $(this).css("background-position","-79px 0px");
+	 Audio.play();
+	 clickNum=1;
+	 }
+	 else{
+	 $(this).css("background-position","-101px 0px");
+	 Audio.pause();
+	 clickNum=0;
+	 }		
+	});
+    $(".but .next").click(function(){
+    	_index++;
+    	MusicPlay();
+    });
+    $(".but .prev").click(function(){
+    	_index--;
+    	MusicPlay();
+    });
+    $(".right ul li").click(function(){
+    	_index=$(this).index();
+    	MusicPlay();
+    	if(clickNum==0){
+	 $(".but .play").css("background-position","-79px 0px");
+
+	 Audio.play();
+	 clickNum=1;
+	 }
+	 else{
+	 $(this).css("background-position","-101px 0px");
+	 Audio.pause();
+	 clickNum=0;
+	}	
+
+    });
+    jdtPlay();
+    function MusicPlay(){
+      $(".right li").eq(_index).addClass("active").siblings().removeClass("active");
+       MusicSrc=$(".right ul li").eq(_index).find("a").attr("dataSrc");
+        var _txt=$(".right ul li").eq(_index).find("a").attr("mz");
+        
+        $(".left .title").text(_txt);
+    	Audio.src=MusicSrc;
+    	 jdtPlay();
+        Audio.play();
+       
+    }
+
+	function CreatMusic(MusicSrc){
+		var CreamMp3=$("<audio src="+MusicSrc+"></audio>").get(0);
+		return CreamMp3;
+	}
+	
+   function jdtPlay(){
+   	$(".left .gdt .jd").animate({width:"200px"},263000);
+   }
+</script>
+</body>
+</html>
